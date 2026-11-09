@@ -9,6 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # TODO TP 1 : tester sous Node 22 et sous Node 24 avec une matrice :
+    #   strategy:
+    #     matrix:
+    #       node: [22, 24]
+    # puis node-version: ${{ matrix.node }} à la place de 24
     strategy:
       matrix:
         node: [24, 26]
