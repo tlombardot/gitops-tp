@@ -14,11 +14,15 @@ jobs:
     #     matrix:
     #       node: [22, 24]
     # puis node-version: ${{ matrix.node }} à la place de 24
+    strategy:
+      matrix:
+        node: [22, 24]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: ${{ matrix.node }}
+      - run: npm install -g npm@latest
       - run: npm ci
       # TODO TP 2 : npm run test:coverage, pour que le pipeline échoue sous les seuils de couverture
       - run: npm test
