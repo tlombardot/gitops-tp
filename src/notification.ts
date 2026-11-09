@@ -1,4 +1,4 @@
-import type { Order } from './domain/order.ts'
+import type { Order } from "./domain/order.ts"
 
 /** Envoi de l'e-mail de confirmation (simulé : le service d'e-mail n'existe pas dans le TP). */
 export function sendConfirmation(order: Order, apiKey: string | undefined): boolean {
