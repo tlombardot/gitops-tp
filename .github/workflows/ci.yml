@@ -5,6 +5,7 @@ on:
   push:
     branches: [main]
   # TODO TP 1 : lancer aussi le pipeline sur chaque pull request (pull_request:)
+  pull_request:
 
 jobs:
   test:
@@ -29,11 +30,14 @@ jobs:
   # TODO TP 1 : un job « lint » qui lance npm run lint (copiez le job test et changez la dernière ligne)
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [24, 26]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: ${{ matrix.node }}
       - run: npm ci
       - run: npm run lint
 
