@@ -9,7 +9,7 @@ on:
 jobs:
   sonar:
     # TODO TP 2 : SonarQube tourne sur votre poste : le job doit tourner sur votre runner, runs-on: [self-hosted, local]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, local]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -23,6 +23,6 @@ jobs:
       - uses: SonarSource/sonarqube-scan-action@v8
         env:
           # TODO TP 2 : le jeton est confidentiel : ${{ secrets.SONAR_TOKEN }}
-          SONAR_TOKEN: ""
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           # TODO TP 2 : l'adresse du serveur ne l'est pas : ${{ vars.SONAR_HOST_URL }}
-          SONAR_HOST_URL: ""
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}

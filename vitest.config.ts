@@ -8,6 +8,10 @@ export default defineConfig({
       include: ["src/**/*.ts"],
       exclude: ["src/server.ts"],
       reporter: ["text", "lcov"],
+      thresholds: {
+        lines: 80,
+        branches: 80,
+      },
       // TODO TP 2 : des seuils (thresholds) de 80 % pour les lignes (lines) et les branches (branches).
       // En dessous, la commande échoue, et le pipeline aussi.
     },
