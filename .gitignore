@@ -5,4 +5,4 @@ reports/
 .env
 *.log
 .scannerwork/
-src/config.Ts
+src/config.ts
