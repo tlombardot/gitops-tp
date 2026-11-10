@@ -5,6 +5,9 @@ on:
   # TODO TP 2 : lancer l'analyse à chaque push sur main et à chaque pull request, comme dans ci.yml.
   # Pour l'instant, elle ne se lance qu'à la main (onglet Actions, bouton « Run workflow »).
   workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
   sonar:
