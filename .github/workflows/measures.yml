@@ -3,6 +3,10 @@ name: Measures
 
 on:
   # TODO TP 5 : à chaque push sur main et à chaque pull request
+  push:
+    branches:
+      - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -22,6 +26,8 @@ jobs:
         # TODO TP 5 : si GreenIT échoue avec « launchAnalyse is not defined », la CSP de helmet bloque son script.
         # Pour la mesure seulement : ajoutez ici env: CSP: report-only, et dans src/app.ts, à contentSecurityPolicy :
         #   reportOnly: process.env.CSP === "report-only",
+        env:
+          CSP: report-only
         run: |
           npm start &
           curl --retry 10 --retry-connrefused --retry-delay 1 --silent http://localhost:3000/health
@@ -36,4 +42,4 @@ jobs:
       - name: Weight of the artifacts
         if: always()
         # TODO TP 5 : un budget de 300 Mo pour l'image : npm run weight -- circuitcourt:measure 300
-        run: npm run weight -- circuitcourt:measure
+        run: npm run weight -- circuitcourt:measure 300
