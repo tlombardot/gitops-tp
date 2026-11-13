@@ -1,6 +1,6 @@
 {
   "name": "circuitcourt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "CircuitCourt: order directly from local farmers, pick up at the farm. Training project for the GitOps and CI/CD module.",
   "type": "module",

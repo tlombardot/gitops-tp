@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/tlombardot/gitops-tp/compare/v1.0.0...v1.1.0) (2026-11-13)
+
+
+### Features
+
+* enhance CI workflow with security checks and remove deprecated security.yml ([1ab84f9](https://github.com/tlombardot/gitops-tp/commit/1ab84f950fc716329b77e0422cef66898c63bf4f))
+* implement multi-stage Dockerfile and add image assets ([46fe6be](https://github.com/tlombardot/gitops-tp/commit/46fe6be84cb243204c8367aa631aa92578b85143))
+
+
+### Bug Fixes
+
+* update image tag in compose file for production deployment ([cb6091d](https://github.com/tlombardot/gitops-tp/commit/cb6091d2287ce26bc17b970eb13c0b24f1ff9980))
+
 ## 1.0.0 (2026-11-12)
 
 
